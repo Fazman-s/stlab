@@ -1,56 +1,42 @@
-#include<stdio.h>
-int binsrc(int x[],int low,int high,int key)
-{
-   int mid;
-    while(low<=high)
-    {
-        mid=(low+high)/2;
-        if(x[mid]==key)
-           return mid;
-        if(x[mid]<key)
-            low=mid+1;
-        else
-            high=mid-1;
-    }
-    return -1;
-} 
+#include <stdio.h>
 
-int main()
-{
-    int a[20],key,i,in,succ;
-    printf("Enter the value of n ");
-    scanf("%d",&n);
-    if(n>0)
-    {
-       printf("enter the elements in ascending order\n");
-        for(i=0;i<n;i++)
-            scanf("%d",&a[i]);
-        
-        printf("enter the key element to be searched\n");
-        scanf("%d",&key);
-          succ=binsrc(a,0,n-1,key);
-          if(succ>=0)
-            printf("the key element is found at %d\n",succ+1);
-          else
-            printf("the key element is not found\n");
+int binsrc(int x[],int low,int high,int key){
+  int mid;
+  while(low<=high){
+    mid =(low+high)/2;
+    if(x[mid] == key){
+      return mid;
     }
-    else
-       printf("Number of element should be greater than zero\n");
-    return 0;
+    if(x[mid] < key){
+      low = mid +1;
+      
+    }else high = mid-1;
+  }
+  return -1;
 }
 
-int binsrc(int x[],int low, int high, int key)
-{
-    int mid;               //1
-    while(low<=high)        //2
-    {
-        mid=(low+high)/2;
-        if(x[mid]==key)     //3
-            return mid;     //8
-        if(x[mid]<key)      //4
-            low=mid+1;      //5
-        else
-            high=mid-1;     //6
-    }                       //7
-    return -1;              //8
-}                           //9
+int main(void) {
+   int a[20],n,i,key,succ;
+  printf("Enter the number of elements to entered \n");
+  scanf("%d",&n);
+
+  printf("Enter the elements in ascending order : \t");
+  for(int i=0;i<n;i++){
+    scanf("%d",&a[i]);
+  }
+
+  printf("\nEnter the key element to searched : \t");
+  scanf("%d",&key);
+
+  succ=binsrc(a,0,n-1,key);
+  if(succ >= 0)
+    printf("\n The key element found at position = %d\n",succ+1);
+  else
+    printf("\n Key element not found ");
+  
+  if(succ < 0){ 
+  printf("\nNumber of element must be greater than 0");
+  }
+  
+
+}
