@@ -34,6 +34,6 @@ int main() {
     }
   }
   else{
-      printf("\n invalid input");
-}
+    printf("Not a triangle");
+  }
 }
