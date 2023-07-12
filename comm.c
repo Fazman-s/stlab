@@ -41,7 +41,7 @@ int main() {
     else{
       temp=ts+stocks;
       if(temp>80)
-        printf("\nnew total stocks is not int range1...70");
+        printf("\nnew total stocks is not in range1...70");
       else
         ts=temp;
     }
@@ -75,7 +75,7 @@ int main() {
     }
     else if(sales>1000){
        comm=0.10*1000;
-       comm=comm + 0.15*800;
+       comm=comm + 0.15*(sales -1000);
     }
     else{
       comm=0.10*sales;
