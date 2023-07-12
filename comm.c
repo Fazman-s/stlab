@@ -19,11 +19,11 @@ int main() {
     printf("Enter the number of stocks, barrels \n");
     scanf("%d %d",&stocks,&barrels);
     c1=(locks>=0 && locks<=70);
-    c2=(locks>=0 && locks<=80);
-    c3=(locks>=0 && locks<=90);
+    c2=(stocks>=0 && stocks<=80);
+    c3=(barrels>=0 && barrels<=90);
 
     if(!c1){
-      printf("\n value not in the range 1...70");
+      printf("\n value of locks not in the range 1...70");
     }
     else{
       temp=tl+locks;
@@ -36,7 +36,7 @@ int main() {
 
 
     if(!c2){
-      printf("\n value not in the range 1...80");
+      printf("\n value of stocks not in the range 1...80");
     }
     else{
       temp=ts+stocks;
@@ -49,7 +49,7 @@ int main() {
 
 
     if(!c3){
-      printf("\n value not in the range 1...90");
+      printf("\n value of barrels not in the range 1...90");
     }
     else{
       temp=tb+barrels;
@@ -59,14 +59,13 @@ int main() {
         tb=temp;
     }
     printf("\n Total barrels = %d ",tb);
-
-
     printf("\n Enter the number of locks or to exit the loop enter -1 \n");
     scanf("%d",&locks);
-    
+  }  
 
   printf("\n Total locks = %d\n total stocks = %d \n total barrels = %d \n",tl,ts,tb);
   sales=lp*tl +sp*ts +bp*tb;
+    printf("\nthe total sales=%f\n",sales);
   
   if(sales>0){
     if(sales>1800){
@@ -88,5 +87,5 @@ int main() {
   }
   return 0;
   
-  }
+  
 }
